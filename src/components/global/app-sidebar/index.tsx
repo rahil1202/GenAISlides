@@ -11,9 +11,9 @@ import { Project, User } from '@prisma/client'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import NavMain from './nav-main'
 import { data } from '@/lib/constant'
-
+import RecentOpen from './recent-open'
+import NavFooter from './nav-footer';
 const AppSidebar =({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   recentProjects,
   user,
   ...props
@@ -29,17 +29,18 @@ const AppSidebar =({
         <div className= "flex aspect-square size-8 items-center justify-center rounded-lg text-sidebar-primary-foreground">
           <Avatar className="h-10 w-10 rounded-full">
             <AvatarImage src={'/next.svg'} alt="logo" />
-            <AvatarFallback className="rounded-lg">GAIS</AvatarFallback>
+            <AvatarFallback className="rounded-lg">G-AI-S</AvatarFallback>
           </Avatar>
         </div>
           <span className="truncate text-primary text-2xl font-semibold">GenAISlides</span>
        </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent className="px-3 mt-10 gap-y-6">
-        <NavMain items={data.navMain}/>       
-      </SidebarContent>
+        <NavMain items={data.navMain}/>
+        <RecentOpen recentProjects={recentProjects} />      
+      </SidebarContent>         
       <SidebarFooter>
-      
+        <NavFooter prismaUser={user}/>
       </SidebarFooter>
     </Sidebar>
   )

@@ -1,11 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"; 
 import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarHeader,
+  SidebarGroup,  
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
